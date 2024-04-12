@@ -1,0 +1,19 @@
+set nu
+set ruler
+set incsearch
+
+set expandtab
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+
+call plug#begin()
+Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'altercation/vim-colors-solarized'
+call plug#end()
+
+if has("gui_running")
+    syntax enable
+    set background=light
+    colorscheme solarized
+endif

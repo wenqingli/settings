@@ -1,0 +1,42 @@
+set nu
+set ruler
+set incsearch
+
+set expandtab
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+
+" Alternatively colorscheme
+"colorscheme desert
+
+" vim in Git commit messages
+filetype indent plugin on
+autocmd FileType gitcommit setlocal textwidth=160
+autocmd FileType gitcommit setlocal colorcolumn=+1
+
+call plug#begin()
+Plug 'preservim/nerdtree'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'mileszs/ack.vim'
+Plug 'itchyny/lightline.vim'
+
+Plug 'preservim/tagbar'
+Plug 'altercation/vim-colors-solarized'
+call plug#end()
+
+map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
+
+set laststatus=2
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+    cnoreabbrev ag Ack
+endif
+
+nmap <F8> :TagbarToggle<CR>
+
+syntax enable
+set background=dark
+colorscheme solarized
