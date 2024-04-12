@@ -1,0 +1,2 @@
+# settings
+settings for applications
