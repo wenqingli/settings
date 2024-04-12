@@ -12,6 +12,8 @@ Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
+map <C-n> :NERDTreeToggle<CR>
+
 if has("gui_running")
     syntax enable
     set background=light
